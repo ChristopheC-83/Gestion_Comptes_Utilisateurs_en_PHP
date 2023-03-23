@@ -1,16 +1,14 @@
-Visiteur => voit le site
-Utitlisateur => a un compte qu'il peut gérer
-Administrateur => a les clés du chateau
+Ce dossier est une base pour créer un site qui devra gérer :
+- des visiteurs
+- des utilisateurs inscrits et connectés avec des accés et droits supplémentaites
+- des aadministrateurs avec des accés et droits supplémentaites
 
-en POO, les fonctions sont :
-public => accesibles de partout
-protected => accessible à l'intérieur de la classe ou d'une classe enfant.
-private => seulement à l'intérieur de la classe.
+L'architecture est sur une base MVC
 
-Une classe abstraite ne peut pas être instanciée.
-Elle sert de 'support"/modèle à d'autres classes.
+Le style s'appuie sur le preprocesseur SASS
 
-Pour acoir un mdp crypté, on affiche
-"echo password_hash("test", PASSWORD_DEFAULT);"
-(test ou autre...)
-et hop, on peut renseigner notre bd avec le mot de passe hashé !
+Une petite animation GSAP traine, pour le fun ;-)
+C'est discret !
+
+ATTENTION, en aucun cas l'esthétique du site a été pris en compte.... on part ici d'un site nom stylé !
+
