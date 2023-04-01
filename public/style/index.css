@@ -49,7 +49,7 @@ a {
   color: black;
 }
 
-.navContainer {
+.containerNavbar {
   width: 90%;
   max-width: 1200px;
   margin: 15px auto;
@@ -63,23 +63,23 @@ a {
   justify-content: center;
   align-items: center;
 }
-.navContainer img,
-.navContainer i {
+.containerNavbar img,
+.containerNavbar i {
   width: 40px;
   margin-right: 40px;
   font-size: 40px;
 }
-.navContainer ul {
+.containerNavbar ul {
   width: 100%;
   display: flex;
   justify-content: space-evenly;
 }
-.navContainer ul li {
+.containerNavbar ul li {
   cursor: pointer;
   font-size: 20px;
   transition: all 33s;
 }
-.navContainer ul li:hover {
+.containerNavbar ul li:hover {
   text-decoration: underline;
   text-underline-offset: 8px;
   font-weight: bold;
@@ -148,7 +148,7 @@ a {
   background-color: #f09104;
 }
 
-.accueil p {
+.containerAccueil p {
   color: white;
   font-weight: bold;
   line-height: 25px;

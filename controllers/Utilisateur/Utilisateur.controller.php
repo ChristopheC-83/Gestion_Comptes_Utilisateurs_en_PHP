@@ -94,8 +94,8 @@ class UtilisateurController extends MainController
     private function sendMailValidation($login, $mail, $clef)
     {
         $urlVerification = URL . "validationMail/" . $login . "/" . $clef;
-        $sujet = "Validation création compte sur le site MonSite.fr";
-        $message = "Pour valider votre compte, veuillez cliquer sur le lien suivant : " . $urlVerification;
+        $sujet = "Validation création du compte Poseur Ixina Arles.";
+        $message = "Pour valider votre compte et prendre connaissance de la Charte du Poseur, veuillez cliquer sur le lien suivant : " . $urlVerification;
         Toolbox::sendMail($mail, $sujet, $message);
     }
     public function validation_modificationMail($mail)

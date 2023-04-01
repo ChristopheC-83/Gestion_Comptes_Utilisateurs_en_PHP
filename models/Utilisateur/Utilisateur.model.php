@@ -56,7 +56,7 @@ class UtilisateurManager extends MainManager
     {
         // on appelle le login, s'il n'existe pas dans la bdd, c'est bon, on continue !
         $utilisateur = $this->getUserInformation($login);
-        return empty($utilisateur); // <= signifie "retourne une information si $utilisateur est vide
+        return empty($utilisateur); // <= signifie "retourne une information si $utilisateur est vide"
         
     }
     public function bdCreerCompte($login, $passwordCrypte, $mail, $clef, $image, $role)

@@ -1,15 +1,21 @@
 @import "./libs/reset";
 @import "./libs/variables";
 @import "./libs/mixins";
+
 @import "./sous-fichiers/navbar";
 @import "./sous-fichiers/common";
 @import "./sous-fichiers/alert";
-@import "./sous-fichiers/accueil";
-@import "./pages/page1";
-@import "./pages/page2";
+@import "./sous-fichiers/header";
+@import "./sous-fichiers/footer";
+
+@import "./pages/accueil";
 @import "./pages/erreur";
-@import "./pages/pageLogin";
-@import "./sous-fichiers/admin";
+@import "./pages/login";
+@import "./pages/charte";
+@import "./pages/deconnexion";
+@import "./pages/profil";
+@import "./pages/gestionProfils";
+@import "./pages/accuses";
 
 body {
   background-color: #333;

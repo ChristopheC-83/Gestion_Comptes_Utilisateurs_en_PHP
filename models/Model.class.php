@@ -2,15 +2,11 @@
 
 abstract class Model
 {
-    // abstract : la classe n'est jamais utilisée telle quelle
-    // elle sert de base à la fabrication d'une autre classe par héritage
-
-    // on crée des variables, plus facile à modifier au besoin
-
-    private static $dbhost = "localhost";
-    private static $dbname = "gestion_comptes";
-    private static $dbUser = "root";
-    private static $dbUserPassword = "";
+    
+    private static $dbhost = "89.116.147.103";
+    private static $dbname = "u256533777_charte_poseurs";
+    private static $dbUser = "u256533777_ixina_arles";
+    private static $dbUserPassword = "Bulgarie359";
     private static $pdo;
     
 

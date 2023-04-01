@@ -24,7 +24,7 @@ class Toolbox
     }
 
 
-    // fonction ajout d'image à réemployer à toutes les sauces... ne pas recodeer à chaque site !
+    // fonction ajout d'image à réemployer à toutes les sauces... ne pas recoder à chaque site !
     public static function ajoutImage($file, $dir){
 
         if(!isset($file['name']) || empty($file['name'])){

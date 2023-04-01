@@ -1,17 +1,23 @@
-<nav class="navContainer">
+<nav class="containerNavbar">
 
     <ul>
         <li><a href="<?= URL ?>accueil">Accueil</a></li>
-        <li><a href="<?= URL ?>page1">Page 1</a></li>
-        <li><a href="<?= URL ?>page2">Page 2</a></li>
 
 
-        <?php if (Securite::estConnecte() && Securite::estAdministrateur()) : ?>
 
-            <li><a href="<?= URL ?>administration/droits">Gérer les droits</a></li>
-            <li><a href="<?= URL ?>administration/page2">Admin 2</a></li>
 
+        <?php if (Securite::estConnecte()) : ?>
+
+            <li><a href="<?= URL ?>compte/charte">Charte</a></li>
+
+            <?php if (Securite::estConnecte() && Securite::estAdministrateur()) : ?>
+
+                <li><a href="<?= URL ?>administration/droits">Gérer les droits</a></li>
+                <li><a href="<?= URL ?>administration/accuses">Accusés de validation</a></li>
+
+            <?php endif ?>
         <?php endif ?>
+
     </ul>
 
     <?php if (!Securite::estConnecte()) : ?>

@@ -33,12 +33,6 @@ try {
         case "accueil":
             $visiteurController->accueil();
             break;
-        case "page1":
-            $visiteurController->page1();
-            break;
-        case "page2":
-            $visiteurController->page2();
-            break;
         case "login":
             $visiteurController->login();
             break;
@@ -99,6 +93,10 @@ try {
                 switch ($url[1]) {
                     case "profil":
                         $utilisateurController->profil();
+                        break;
+                    case "charte":
+                        echo("charte");
+                        // $utilisateurController->charte();
                         break;
                     case "deconnexion":
                         $utilisateurController->deconnexion();

@@ -20,45 +20,14 @@ class VisiteurController extends MainController
             "page_description" => "Description de la page d'accueil",
             "view" => "views/Visiteur/accueil.view.php",
             "template" => "views/commons/template.php",
-            "css" => "accueil",
+            "css" => "containerAccueil",
             "js"=>['app.js']
         ];
 
         $this->genererPage($data_page);
     }
 
-    public function Page1()
-    {
-        // ce tableau montre qu'on peut rajouter ce qu'on veut en variable !
-        $data_page = [
-            "page_title" => "titre de la page page 1",
-            "page_description" => "Description de la page page 1",
-            "view" => "views/Visiteur/page1.view.php",
-            "template" => "views/commons/template.php",
-            "css" => "page1",
-            "js" => ["app.js"]
-
-        ];
-
-        $this->genererPage($data_page);
-    }
-
-    public function Page2()
-    {
-        $data_page = [
-            "page_title" => "titre de la page 2",
-            "page_description" => "Description de la page 2",
-            "view" => "views/Visiteur/page2.view.php",
-            "template" => "views/commons/template.php",
-            "css" => "page2",
-            "js" => ["app.js"]
-
-        ];
-
-        $this->genererPage($data_page);
-    }
-
-    public function pageErreur($msg)
+     public function pageErreur($msg)
     {
         // ici, pas besoin d'un affichage spécifique, nous reprenons l'affichage de la classe parent.
         parent::pageErreur($msg);
@@ -70,7 +39,7 @@ class VisiteurController extends MainController
             "page_description" => "Page de connexion du site",
             "view" => "views/Visiteur/login.view.php",
             "template" => "views/commons/template.php",
-            "css" => "containerConnexion",
+            "css" => "containerLogin",
             "js"=>['app.js']
         ];
 
@@ -84,7 +53,7 @@ class VisiteurController extends MainController
             "page_description" => "Page de création de compte",
             "view" => "views/Visiteur/creerCompte.view.php",
             "template" => "views/commons/template.php",
-            "css" => "containerCreation containerConnexion",
+            "css" => "containerCreationCompte",
             "js"=>['app.js']
         ];
 
