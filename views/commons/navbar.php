@@ -21,7 +21,7 @@
 
 
         <?php if (!Securite::estConnecte()) : ?>
-            <li><a href="<?= URL ?>login">Login</a></li>
+            <li><a href="<?= URL ?>login">Connexion</a></li>
             <li>
 
                 <a href="<?= URL ?>creerCompte">Inscription</a>

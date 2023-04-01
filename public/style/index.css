@@ -73,6 +73,31 @@ a {
   border-bottom: 1px solid #f1f1f1;
 }
 
+.entetePage h1 {
+  font-size: 24px;
+  text-decoration: underline;
+  font-weight: bold;
+  text-align: center;
+  margin: 20px;
+}
+.entetePage h2 {
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  margin: 20px;
+}
+.entetePage h3 {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 15px 0 15px 20%;
+}
+.entetePage p {
+  width: 80%;
+  margin: 0 auto;
+  line-height: 20px;
+  text-align: justify;
+}
+
 .alert {
   background-color: #b4b6b3;
   width: 80%;
