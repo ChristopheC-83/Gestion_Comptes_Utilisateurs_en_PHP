@@ -11,22 +11,27 @@
 @import "./pages/accueil";
 @import "./pages/erreur";
 @import "./pages/login";
+@import "./pages/creation";
 @import "./pages/charte";
 @import "./pages/deconnexion";
 @import "./pages/profil";
 @import "./pages/gestionProfils";
 @import "./pages/accuses";
 
-body {
-  background-color: #333;
-}
 
+body{
+  margin-top: 1px solid #284B73;
+  background-color: #f1f1f1;
+  display: flex;
+  // justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
 .app {
   width: 100%;
-  max-width: 1200px;
+  max-width: 1920px;
   margin: 0 auto;
-  min-height: 90vh;
-  background-color: #333;
-  color: violet;
-  padding: 0 10px;
+  min-height: 100vh;
+  background-color: #f1f1f1;
+  color: #333;
 }

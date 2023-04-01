@@ -1,0 +1,27 @@
+.headerContainer{
+
+        width: 100%;
+        max-width: 1920px;;
+        height: 250px;
+        background-color: #284B73;
+        padding-top: 30px;
+        margin-bottom: 40px;
+
+        h1, h2{
+            color : #f1f1f1;
+            text-align: center;
+            font-weight: bold;
+        }
+        h1{
+            margin-bottom: 20px;
+            font-size: 60px;
+            letter-spacing: 15px;
+        
+        }
+        h2{
+            margin-bottom: 30px;
+            font-size: 40px;
+            letter-spacing: 3px;
+        
+        }
+}

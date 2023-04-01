@@ -18,17 +18,25 @@
             <?php endif ?>
         <?php endif ?>
 
+
+
+        <?php if (!Securite::estConnecte()) : ?>
+            <li><a href="<?= URL ?>login">Login</a></li>
+            <li>
+
+                <a href="<?= URL ?>creerCompte">Inscription</a>
+            </li>
+        <?php else : ?><li>
+
+                <a href="<?= URL ?>compte/profil">Profil</a>
+            </li>
+            <li>
+
+                <a href="<?= URL ?>compte/deconnexion">Déconnexion</a>
+            </li>
+        <?php endif ?>
+
     </ul>
-
-    <?php if (!Securite::estConnecte()) : ?>
-        <a href="<?= URL ?>login"><img src="<?= URL ?>public/assets/images/connexion/cadenas.png"></a>
-        <a href="<?= URL ?>creerCompte"><i class="fa-regular fa-square-plus"></i></a>
-    <?php else : ?>
-        <a href="<?= URL ?>compte/profil"><img src="<?= URL ?>public/assets/images/connexion/buste.png"></a>
-        <a href="<?= URL ?>compte/deconnexion"><img src="<?= URL ?>public/assets/images/connexion/door.jpg"></a>
-    <?php endif ?>
-
-
 
 
 
