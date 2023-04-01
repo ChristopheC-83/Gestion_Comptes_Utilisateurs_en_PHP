@@ -32,7 +32,7 @@
             }
         ?>
 
-        <?= $page_content; ?>
+        <?= $page_content ?>
 
     </div>
     <?php require_once("views/commons/footer.php"); ?>
