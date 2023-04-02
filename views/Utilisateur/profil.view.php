@@ -2,12 +2,7 @@
 
     <h1>Page du profil de <?= $utilisateur['login'] ?></h1>
     <h2>Pour modifier ou supprimer votre compte.</h2>
-
-
-
-
-
-
+    
     <br>
     <div id="role">
         <p><b>Role :</b> <?= $_SESSION['profil']['role'] ?></p>

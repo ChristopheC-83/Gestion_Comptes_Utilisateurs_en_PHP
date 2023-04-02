@@ -83,7 +83,7 @@ try {
                 Toolbox::ajouterMessageAlerte("Veuillez vous connecter.", Toolbox::COULEUR_ROUGE);
                 header('Location:' . URL . 'login');
             } elseif (!Securite::checkCookieConnexion()) {
-                Toolbox::ajouterMessageAlerte("Session expirée, veuillez vous reconnecter.", Toolbox::COULEUR_ROUGE);
+                Toolbox::ajouterMessageAlerte("Session expirée, veuillez vous reconnecter", Toolbox::COULEUR_ROUGE);
                 setcookie(Securite::COOKIE_NAME, "", time() - 3600);
                 unset($_SESSION['profil']);
                 header('Location:' . URL . 'login');
@@ -95,8 +95,8 @@ try {
                         $utilisateurController->profil();
                         break;
                     case "charte":
-                        // echo("charte");
-                        $utilisateurController->charte();
+                        echo("charte");
+                        // $utilisateurController->charte();
                         break;
                     case "deconnexion":
                         $utilisateurController->deconnexion();

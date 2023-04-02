@@ -3,12 +3,15 @@
     <ul>
         <li><a href="<?= URL ?>accueil">Accueil</a></li>
 
+        <?php if (Securite::estConnecte()) : ?>
+        
+        <li><a href="<?= URL ?>compte/charte">Charte</a></li>
+        
+        <li><a href="<?= URL ?>compte/profil">Profil</a></li>
 
-
+        <?php endif ?>
 
         <?php if (Securite::estConnecte()) : ?>
-
-            <li><a href="<?= URL ?>compte/charte">Charte</a></li>
 
             <?php if (Securite::estConnecte() && Securite::estAdministrateur()) : ?>
 
@@ -18,22 +21,11 @@
             <?php endif ?>
         <?php endif ?>
 
-
-
         <?php if (!Securite::estConnecte()) : ?>
             <li><a href="<?= URL ?>login">Connexion</a></li>
-            <li>
-
-                <a href="<?= URL ?>creerCompte">Inscription</a>
-            </li>
-        <?php else : ?><li>
-
-                <a href="<?= URL ?>compte/profil">Profil</a>
-            </li>
-            <li>
-
-                <a href="<?= URL ?>compte/deconnexion">Déconnexion</a>
-            </li>
+            <li><a href="<?= URL ?>creerCompte">Inscription</a></li>
+        <?php else : ?>
+            <li><a href="<?= URL ?>compte/deconnexion">Déconnexion</a></li>
         <?php endif ?>
 
     </ul>
