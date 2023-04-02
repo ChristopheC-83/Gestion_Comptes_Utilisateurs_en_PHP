@@ -1,7 +1,9 @@
-<div class="page_title <?= $css  ?>">
+<div class="entetePage <?= $css  ?>">
 
 
     <h1>Page d'administration des droits des utilisateurs</h1>
+    <h2>Ne pas mettre d'utilisateur en role "administrateur"</h2>
+    <h2>Manipulation irréversible à partir du site !</h2>
 
     <table>
         <thead>

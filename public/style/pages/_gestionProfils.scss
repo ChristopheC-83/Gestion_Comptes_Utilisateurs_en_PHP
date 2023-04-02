@@ -1,4 +1,14 @@
-.containerGestionProfil{
+.containerGestionProfil {
 
-
+    table{
+        width: 80%;
+        max-width: 1200px;
+        margin: 0 auto;
+        margin-top: 40px;
+    }
+  table, th, td, tr {
+    border: 2px solid $bleuIx;
+    background-color: $bleuIxClair;
+    padding: 10px 5px;
+  }
 }

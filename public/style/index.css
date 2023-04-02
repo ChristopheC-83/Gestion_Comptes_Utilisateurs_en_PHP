@@ -98,6 +98,43 @@ a {
   text-align: justify;
 }
 
+.entry_formulaire {
+  width: 100%;
+  margin: 20px auto;
+  padding-left: 60px;
+}
+.entry_formulaire input {
+  height: 50px;
+  width: 500px;
+  margin: 10px 0;
+  border-radius: 10px;
+  border: 2px solid #284B73;
+  padding-left: 10px;
+}
+.entry_formulaire input:focus {
+  box-shadow: 0px 0px 6px 3px #7EBCE6;
+}
+.entry_formulaire button {
+  width: 500px;
+  text-align: center;
+  padding: 15px;
+  border-radius: 10px;
+  margin: 10px auto;
+  background-color: #7EBCE6;
+  border: 2px solid #284B73;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.entry_formulaire .btnRed {
+  background-color: rgb(230, 88, 88);
+  border: 3px solid red;
+}
+
+.dnone {
+  display: none;
+}
+
 .alert {
   background-color: #b4b6b3;
   width: 80%;
@@ -166,6 +203,42 @@ a {
   text-align: center;
   margin-top: 80px;
   font-size: 25px;
+}
+
+.containerLogin form {
+  margin: 10px auto;
+  max-width: 600px;
+}
+
+.modificationPassword form {
+  margin: 10px auto;
+  max-width: 600px;
+}
+.modificationPassword .validationSupp {
+  background-color: rgb(230, 88, 88);
+  border: 3px solid red;
+}
+
+.containerCreationCompte form {
+  margin: 10px auto;
+  max-width: 600px;
+}
+
+.containerProfil {
+  margin: 10px auto;
+  max-width: 600px;
+}
+
+.containerGestionProfil table {
+  width: 80%;
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-top: 40px;
+}
+.containerGestionProfil table, .containerGestionProfil th, .containerGestionProfil td, .containerGestionProfil tr {
+  border: 2px solid #284B73;
+  background-color: #7EBCE6;
+  padding: 10px 5px;
 }
 
 body {

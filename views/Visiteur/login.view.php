@@ -1,9 +1,9 @@
-<div class="page_title <?= $css ?>">
+<div class="entetePage <?= $css ?>">
 
     <h1>Page de Connexion</h1>
 
     <!-- actino est la page vers laquelle les infos sont envoyées qd on submit. -->
-    <form action="<?=URL?>validation_login" method="post">
+    <form action="<?= URL ?>validation_login" method="post">
         <div class="entry_formulaire">
             <label for="login">Login</label>
             <br>
@@ -15,9 +15,9 @@
             <br>
             <input type="password" id="password" name="password" placeholder="Votre mot de passe">
         </div>
-
-        <button type="submit">Connexion</button>
-
+        <div class="entry_formulaire">
+            <button type="submit">Connexion</button>
+        </div>
 
 
     </form>
@@ -25,7 +25,7 @@
 
 
 
-  
+
 
 
 

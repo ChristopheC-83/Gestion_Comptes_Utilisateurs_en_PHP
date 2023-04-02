@@ -30,7 +30,7 @@ class AdministrateurController extends MainController
             "view" => "views/Administrateur/droits.view.php",
             "template" => "views/commons/template.php",
             "utilisateurs" => $utilisateurs,
-            "css" => "droits",
+            "css" => "containerGestionProfil",
             "js" => ['app.js', 'admin.js'],
         ];
 

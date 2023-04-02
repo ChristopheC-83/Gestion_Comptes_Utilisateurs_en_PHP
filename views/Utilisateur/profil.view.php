@@ -1,54 +1,67 @@
-<div class="page_title <?= $css ?>">
+<div class="entetePage <?= $css ?>">
 
-    <h1 id=titre_gsap>Page du profil de <?= $utilisateur['login'] ?></h1>
-
-    <div class="imageEtModif">
-        <div><img src="<?= URL ?>public/assets/images/<?= $utilisateur['image'] ?>" width="150px" alt="photo de profil">
-        </div>
-        <!-- enctype obligatoire qd données images (ou autres ? à voir) à recupérer -->
-        <form action="<?= URL ?>compte/validation_modificationImage" method="post" enctype="multipart/form-data">
-            <div>
-                <label for="image">Changer l'image de profil</label><br>
-                <input type="file" name="image" id="image" onchange="submit()">
-
-            </div>
-    </div>
+    <h1>Page du profil de <?= $utilisateur['login'] ?></h1>
+    <h2>Pour modifier ou supprimer votre compte.</h2>
 
 
 
-    </form>
+
+
 
     <br>
     <div id="role">
-        <p>Role : <?= $_SESSION['profil']['role'] ?></p>
+        <p><b>Role :</b> <?= $_SESSION['profil']['role'] ?></p>
     </div>
     <br>
     <div id="mail">
-        <p>Mail : <?= $utilisateur['mail'] ?></p>
-        <button><i class="fa-solid fa-pen" id="btnModifMail"></i></button>
+        <p><b>Mail :</b> <?= $utilisateur['mail'] ?></p>
+
     </div>
     <br>
-    <div id="modificationMail" class="div_cachee">
+    <div class="entry_formulaire">
+        <button id="btnModifMail">Modifier l'adresse mail</button>
+
+    </div>
+    <br>
+    <div id="modificationMail" class="dnone">
         <form action="<?= URL ?>compte/validation_modificationMail" method="post">
             <div class="entry_formulaire">
-                <label for="mail2">Nouvelle adresse :</label>
+                <label for="mail2"><b>Nouvelle adresse mail :</b></label>
 
                 <input type="text" placeholder="<?= $utilisateur['mail'] ?>" name="mail" id="mail2">
 
-                <button id="btnValidationModifMail">Valider la nouvelle adresse</button>
             </div>
+            <div id="btnValidationModifMail" class="entry_formulaire dnone">
+                <button>Valider la nouvelle adresse</button>
+
+            </div>
+            <div class="entry_formulaire">
+                <button id="annulerModifMail" class="btnRed dnone">
+                    <a href="<?= URL ?>compte/profil">
+                        Annuler la modification du mail.
+                    </a>
+                </button>
+            </div>
+
         </form>
+    </div>
+
+
+    <div class="entry_formulaire">
+        <button id="btnModifMdp"><a href="<?= URL ?>compte/modificationPassword">Modifier le mot de passe</a></button>
+
+    </div>
+    <div class="entry_formulaire">
+        <button id="btnSuppCompte" class="btnSuppCompte">Supprimer mon compte</button>
 
     </div>
 
-    <button id="btnModifMdp"><a href="<?= URL ?>compte/modificationPassword">Modifier le mot de passe</a></button>
-    <button id="btnSuppCompte" class="btnSuppCompte">Supprimer mon compte</button>
-</div>
+    <div class="entry_formulaire">
+        <button id="suppCompte" class="btnRed dnone">
+            <a href="<?= URL ?>compte/suppressionCompte">
+                Veuillez confirmer la supression. <br>Action définitive et irréversible !
+            </a>
 
-<div id="suppCompte" class="validationSupp dnone ">
-    <a href="<?= URL ?>compte/suppressionCompte">
-        Veuillez confirmer la supression. <br>Action définitive et irréversible !
-    </a>
-
+        </button>
+    </div>
 </div>
-   

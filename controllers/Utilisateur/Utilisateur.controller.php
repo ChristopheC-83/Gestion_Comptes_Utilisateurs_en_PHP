@@ -64,8 +64,8 @@ class UtilisateurController extends MainController
             "view" => "views/Utilisateur/profil.view.php",
             "template" => "views/commons/template.php",
             "utilisateur" => $datas,
-            "css" => "profil",
-            "js" => ['profil.js', 'app.js'],
+            "css" => "containerProfil",
+            "js" => ['app.js', 'profil.js'],
         ];
 
         $this->genererPage($data_page);
@@ -145,7 +145,7 @@ class UtilisateurController extends MainController
             "page_description" => "Description de la page de modification du password",
             "view" => "views/Utilisateur/modificationPassword.view.php",
             "template" => "views/commons/template.php",
-            "css" => "profil",
+            "css" => "modificationPassword",
             "js" => ['app.js', 'modifMDP.js'],
         ];
 
@@ -217,5 +217,18 @@ class UtilisateurController extends MainController
         if ($ancienneImage !== "profils/profil.png") {
             unlink("public/assets/images/" . $ancienneImage);
         }
+    }
+    public function charte()
+    {
+        $data_page = [
+            "page_title" => "charte du poseur",
+            "page_description" => "les détails d'une pose réussie.",
+            "view" => "views/Utilisateur/charte.view.php",
+            "template" => "views/commons/template.php",
+            "css" => "containerCharte",
+            "js" => ['app.js', 'charte.js'],
+        ];
+
+        $this->genererPage($data_page);
     }
 }

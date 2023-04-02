@@ -95,8 +95,8 @@ try {
                         $utilisateurController->profil();
                         break;
                     case "charte":
-                        echo("charte");
-                        // $utilisateurController->charte();
+                        // echo("charte");
+                        $utilisateurController->charte();
                         break;
                     case "deconnexion":
                         $utilisateurController->deconnexion();

@@ -1,28 +1,66 @@
-.entetePage{
+.entetePage {
+  h1 {
+    font-size: 24px;
+    text-decoration: underline;
+    font-weight: bold;
+    text-align: center;
+    margin: 20px;
+  }
+  h2 {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    margin: 20px;
+  }
+  h3 {
+    font-size: 18px;
+    font-weight: bold;
+    margin: $marginH3;
+  }
+  p {
+    width: 80%;
+    margin: 0 auto;
+    line-height: 20px;
+    text-align: justify;
+  }
+}
 
-    h1{
-        font-size: 24px;
-        text-decoration: underline;
-        font-weight: bold;
-        text-align: center;
-        margin: 20px;
-    }
-    h2{
-        font-size: 20px;
-        font-weight: bold;
-        text-align: center;
-        margin: 20px;
-    }
-    h3{
-        font-size: 18px;
-        font-weight: bold;
-        margin: $marginH3;
-    }
-    p{
-        width: 80%; 
-        margin: 0 auto;
-        line-height: 20px;
-        text-align: justify;
-    }
+.entry_formulaire {
+  width: 100%;
+  margin: 20px auto;
+  padding-left: 60px;
+  input {
+    height: 50px;
+    width: 500px;
+    margin: 10px 0;
+    border-radius: 10px;
+    border: 2px solid $bleuIx;
+    padding-left: 10px;
 
+    &:focus {
+      box-shadow: 0px 0px 6px 3px $bleuIxClair;
+    }
+  }
+
+  button {
+    width: 500px;
+    text-align: center;
+    padding: 15px;
+    border-radius: 10px;
+    margin: 10px auto;
+    background-color: $bleuIxClair;
+    border: 2px solid $bleuIx;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  .btnRed{
+    background-color: rgb(230, 88, 88);
+    border : 3px solid red;
+    
+  }
+}
+
+.dnone{
+    display: none;
 }
