@@ -88,13 +88,6 @@ class UtilisateurController extends MainController
         }
     }
 
-    private function sendMailValidation($login, $mail, $clef)
-    {
-        $urlVerification = URL . "validationMail/" . $login . "/" . $clef;
-        $sujet = "Validation création du compte Poseur Ixina Arles.";
-        $message = "Pour valider votre compte et prendre connaissance de la Charte du Poseur, veuillez cliquer sur le lien suivant : " . $urlVerification;
-        Toolbox::sendMail($mail, $sujet, $message);
-    }
     public function validation_modificationMail($mail)
     {
         if ($this->utilisateurManager->bdModificationMailUser($_SESSION['profil']['login'], $mail)) {
@@ -110,6 +103,13 @@ class UtilisateurController extends MainController
         $utilisateur = $this->utilisateurManager->getUserInformation($login);
         $this->sendMailValidation($login, $utilisateur['mail'], $utilisateur['clef']);
         header('Location:' . URL . 'login');
+    }
+    private function sendMailValidation($login, $mail, $clef)
+    {
+        $urlVerification = URL . "validationMail/" . $login . "/" . $clef;
+        $sujet = "Validation création du compte Poseur Ixina Arles.";
+        $message = "Pour valider votre compte et prendre connaissance de la Charte du Poseur, veuillez cliquer sur le lien suivant : " . $urlVerification;
+        Toolbox::sendMail($mail, $sujet, $message);
     }
 
     public function validation_mailCompte($login, $clef)
@@ -142,7 +142,7 @@ class UtilisateurController extends MainController
             "page_description" => "Description de la page de modification du password",
             "view" => "views/Utilisateur/modificationPassword.view.php",
             "template" => "views/commons/template.php",
-            "css" => "profil",
+            "css" => "modifPasswordContainer",
             "js" => ['app.js', 'modifMDP.js'],
         ];
 
@@ -226,8 +226,8 @@ class UtilisateurController extends MainController
             "page_description" => "Description des détails d'une pose réussie.",
             "view" => "views/Utilisateur/charte.view.php",
             "template" => "views/commons/template.php",
-            "numPage"=>$numPage,
-            "nbPages"=>$nbPages,
+            "numPage" => $numPage,
+            "nbPages" => $nbPages,
             "charteContent" => $charteContent,
             "css" => "charteContainer",
             "js" => ['app.js', 'charte.js'],
@@ -236,14 +236,23 @@ class UtilisateurController extends MainController
         $this->genererPage($data_page);
     }
 
-    public function validationCharte($login, $validationCharte){
-        $this->utilisateurManager->validationCharteBdd($login, $validationCharte);
-    
-    
+    public function validationCharte($login, $validationCharte)
+    {
+        $utilisateur = $this->utilisateurManager->getUserInformation($login);
+        if ($utilisateur['charteOk'] === 0) {
+
+            $this->utilisateurManager->validationCharteBdd($login, $validationCharte);
+
+            $sujet = "Validation Charte Pose";
+            $message = "Vous avez validé la bonne prise en compte de la charte de pose Ixina Arles. Nous vous en remercions et restons à votre écoute en cas de questions. ";
+            Toolbox::sendMail($utilisateur['mail'], $sujet, $message);
+            Toolbox::ajouterMessageAlerte("Charte Validée. Merci pour votre attention.", Toolbox::COULEUR_VERTE);
+
+            $sujet = "Validation Charte Pose de ".$utilisateur['login'];
+            $message = $utilisateur['login']." de ".$utilisateur['mail']." vient de valider la charte de nos poseurs partenaires. Merci à lui. ";
+            Toolbox::sendMail("christophe.chiappetta@gmail.com", $sujet, $message);
+        }
+
         header('Location:' . URL . 'compte/profil');
     }
-
-   
-
-    
 }

@@ -1,6 +1,7 @@
-<div class="entetePage <?= $css ?>">
+<div class="entetePage containerProfil <?= $css ?>">
 
-    <h1><?= $_SESSION['profil']['login'] ?>, ici tu peux modifier ton mot de passe !</h1>
+    <h1>Page de modification de votre mot de passe.</h1>
+    <h2><?= $_SESSION['profil']['login'] ?>, ne l'oubliez pas !</h2>
 
     <form method="POST" action="<?= URL ?>compte/validation_modificationPassword">
         <div class="entry_formulaire">

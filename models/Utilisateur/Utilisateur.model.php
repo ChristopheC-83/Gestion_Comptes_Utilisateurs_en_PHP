@@ -52,6 +52,14 @@ class UtilisateurManager extends MainManager
         $stmt->closeCursor();
         return $datas;
     }
+
+
+    
+
+
+
+
+
     public function verifLoginDispo($login)
     {
         // on appelle le login, s'il n'existe pas dans la bdd, c'est bon, on continue !
@@ -59,17 +67,17 @@ class UtilisateurManager extends MainManager
         return empty($utilisateur); // <= signifie "retourne une information si $utilisateur est vide"
 
     }
-    public function bdCreerCompte($login, $passwordCrypte, $mail, $clef, $image, $role)
+    public function bdCreerCompte($login, $passwordCrypte, $mail, $clef, $charteOk, $role)
     {
-        $req = "INSERT INTO utilisateur (login, password, mail, est_valide, role, clef, image)
-        VALUES(:login, :password, :mail, 0, :role, :clef, :image)
+        $req = "INSERT INTO utilisateur (login, password, mail, est_valide, role, clef, charteOk)
+        VALUES(:login, :password, :mail, 0, :role, :clef, :charteOk)
         ";
         $stmt = $this->getBDD()->prepare($req);
         $stmt->bindValue(":login", $login, PDO::PARAM_STR);
         $stmt->bindValue(":password", $passwordCrypte, PDO::PARAM_STR);
         $stmt->bindValue(":mail", $mail, PDO::PARAM_STR);
         $stmt->bindValue(":clef", $clef, PDO::PARAM_INT);
-        $stmt->bindValue(":image", $image, PDO::PARAM_STR);
+        $stmt->bindValue(":charteOk", $charteOk, PDO::PARAM_INT);
         $stmt->bindValue(":role", $role, PDO::PARAM_STR);
         $stmt->execute();
         $estModifie = ($stmt->rowCount() > 0);

@@ -93,6 +93,7 @@ try {
                         break;
                     case "validationCharte":
                         $utilisateurController->validationCharte($_SESSION['profil']['login'], 1);
+                        
                         break;
                     case "deconnexion":
                         $utilisateurController->deconnexion();
