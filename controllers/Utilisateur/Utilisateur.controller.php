@@ -222,6 +222,7 @@ class UtilisateurController extends MainController
 
     {
         $charteContent = $this->utilisateurManager->charteBdd();
+        $nbPages = $this->utilisateurManager->nombrePages();
 
         $data_page = [
             "page_title" => "La charte du poseur",
@@ -229,12 +230,20 @@ class UtilisateurController extends MainController
             "view" => "views/Utilisateur/charte.view.php",
             "template" => "views/commons/template.php",
             "numPage"=>$numPage,
+            "nbPages"=>$nbPages,
             "charteContent" => $charteContent,
             "css" => "charteContainer",
             "js" => ['app.js', 'charte.js'],
         ];
 
         $this->genererPage($data_page);
+    }
+
+    public function validationCharte(){
+        $this->utilisateurManager->validationCharteBdd($_SESSION['profil']['login'], 1);
+    
+    
+        header('Location:' . URL . 'compte/profil');
     }
 
    

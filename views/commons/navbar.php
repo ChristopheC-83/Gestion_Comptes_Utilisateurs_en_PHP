@@ -15,8 +15,8 @@
 
             <?php if (Securite::estConnecte() && Securite::estAdministrateur()) : ?>
 
-                <li><a href="<?= URL ?>administration/droits">Gérer les droits</a></li>
-                <li><a href="<?= URL ?>administration/accuses">Accusés de validation</a></li>
+                <li><a href="<?= URL ?>administration/droits">Statuts</a></li>
+                <!-- <li><a href="<?= URL ?>administration/accuses">Accusés de validation</a></li> -->
 
             <?php endif ?>
         <?php endif ?>

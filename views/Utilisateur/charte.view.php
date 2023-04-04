@@ -8,6 +8,7 @@
 
 
     <div class="charteContent">
+        <?=$nbPages?>
         <!-- <pre>
         <?php echo ("test numpage => ".$numPage) ?>
         <?php $page=(int)$numPage ?>
@@ -44,5 +45,16 @@
         <p>"J'ai lu et compris."</p></input>
     </div>
 
-    <div class="nextPage disable" id="nextPage"><a href="<?= URL ?>compte/charte/<?=$page + 1?>">Page suivante</a></div>
+    <div class="nextPage disable" id="nextPage">
+
+    <?php  if (($page + 1) < $nbPages) : ?>
+        <a href="<?= URL ?>compte/charte/<?=$page + 1?>">Page suivante</a>
+        
+    <?php else : ?>
+        <a href="<?= URL ?>compte/profil">Je comprends et <br>
+        valide l'importance de ces points.</a>
+
+    <?php endif ?>
+    
+    </div>
 </div>

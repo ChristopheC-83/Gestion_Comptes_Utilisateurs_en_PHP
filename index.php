@@ -97,6 +97,9 @@ try {
                     case "charte":
                         $utilisateurController->charte($url[2]);
                         break;
+                    case "validationCharte":
+                        $utilisateurController->profil();
+                        break;
                     case "deconnexion":
                         $utilisateurController->deconnexion();
                         break;
