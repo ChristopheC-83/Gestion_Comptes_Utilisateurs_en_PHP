@@ -224,6 +224,76 @@ a {
   max-width: 600px;
 }
 
+.charteContainer .charteContent {
+  width: 100%;
+  margin: 20px auto;
+  max-width: 1920px;
+}
+.charteContainer .charteContent h3 {
+  font-size: 24px;
+}
+.charteContainer .charteContent .content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+.charteContainer .charteContent .content p {
+  font-size: 20px;
+  margin: 0 auto;
+  width: 40%;
+  line-height: 30px;
+}
+.charteContainer .charteContent .content img {
+  width: 40%;
+  margin: 40px auto;
+  box-shadow: 2px 2px 4px #333;
+  border-radius: 10px;
+}
+.charteContainer .charteContent .separateur {
+  height: 5px;
+  width: 80%;
+  margin: 0 auto;
+  background-color: #284B73;
+  margin-bottom: 40px;
+}
+.charteContainer .nextPage {
+  width: 500px;
+  text-align: center;
+  padding: 15px;
+  border-radius: 10px;
+  margin: 20px auto 50px;
+  background-color: #7EBCE6;
+  border: 2px solid #284B73;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.charteContainer .disable {
+  cursor: not-allowed;
+  background-color: #c4c4c4;
+  border: 2px solid #4b4b4b;
+  opacity: 0.5;
+  z-index: 1;
+}
+.charteContainer .disable a {
+  pointer-events: none;
+}
+.charteContainer .checkbox {
+  width: -moz-fit-content;
+  width: fit-content;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  flex-wrap: nowrap;
+}
+.charteContainer .checkbox p {
+  margin-left: 10px;
+  white-space: nowrap;
+}
+
 .containerProfil {
   margin: 10px auto;
   max-width: 600px;
@@ -243,6 +313,7 @@ a {
 
 body {
   margin-top: 1px solid #284B73;
+  min-width: 730px;
   background-color: #f1f1f1;
   display: flex;
   align-items: center;
@@ -251,6 +322,7 @@ body {
 
 .app {
   width: 100%;
+  min-width: 730px;
   max-width: 1920px;
   margin: 0 auto;
   min-height: 100vh;

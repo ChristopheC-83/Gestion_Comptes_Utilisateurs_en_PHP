@@ -5,7 +5,7 @@
 
         <?php if (Securite::estConnecte()) : ?>
         
-        <li><a href="<?= URL ?>compte/charte">Charte</a></li>
+        <li><a href="<?= URL ?>compte/charte/0">Charte</a></li>
         
         <li><a href="<?= URL ?>compte/profil">Profil</a></li>
 

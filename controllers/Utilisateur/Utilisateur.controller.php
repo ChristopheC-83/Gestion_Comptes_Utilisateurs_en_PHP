@@ -218,4 +218,26 @@ class UtilisateurController extends MainController
             unlink("public/assets/images/" . $ancienneImage);
         }
     }
+    public function charte($numPage)
+
+    {
+        $charteContent = $this->utilisateurManager->charteBdd();
+
+        $data_page = [
+            "page_title" => "La charte du poseur",
+            "page_description" => "Description des détails d'une pose réussie.",
+            "view" => "views/Utilisateur/charte.view.php",
+            "template" => "views/commons/template.php",
+            "numPage"=>$numPage,
+            "charteContent" => $charteContent,
+            "css" => "charteContainer",
+            "js" => ['app.js', 'charte.js'],
+        ];
+
+        $this->genererPage($data_page);
+    }
+
+   
+
+    
 }

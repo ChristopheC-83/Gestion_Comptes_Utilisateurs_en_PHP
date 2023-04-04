@@ -145,4 +145,13 @@ class UtilisateurManager extends MainManager
         return $resultat['image'];
     
     }
+
+    public function charteBdd()
+    {
+        $req = $this->getBdd()->prepare("SELECT * FROM contenu");
+        $req->execute();
+        $datas = $req->fetchAll(PDO::FETCH_ASSOC);
+        $req->closeCursor();
+        return $datas;
+    }
 }
