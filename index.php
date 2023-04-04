@@ -82,14 +82,8 @@ try {
             if (!Securite::estConnecte()) {
                 Toolbox::ajouterMessageAlerte("Veuillez vous connecter.", Toolbox::COULEUR_ROUGE);
                 header('Location:' . URL . 'login');
-            } elseif (!Securite::checkCookieConnexion()) {
-                Toolbox::ajouterMessageAlerte("Session expirée, veuillez vous reconnecter", Toolbox::COULEUR_ROUGE);
-                setcookie(Securite::COOKIE_NAME, "", time() - 3600);
-                unset($_SESSION['profil']);
-                header('Location:' . URL . 'login');
+           
             } else {
-                //on regénère le cookie de connexion pour que l'utilisateur ne se délogge pas toutes les 20 minutes.
-                Securite::genererCookieConnexion();
                 switch ($url[1]) {
                     case "profil":
                         $utilisateurController->profil();
@@ -98,7 +92,7 @@ try {
                         $utilisateurController->charte($url[2]);
                         break;
                     case "validationCharte":
-                        $utilisateurController->profil();
+                        $utilisateurController->validationCharte($_SESSION['profil']['login'], 1);
                         break;
                     case "deconnexion":
                         $utilisateurController->deconnexion();

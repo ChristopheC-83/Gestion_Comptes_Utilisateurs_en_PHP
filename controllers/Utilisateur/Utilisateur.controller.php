@@ -22,8 +22,6 @@ class UtilisateurController extends MainController
                     "login" => $login
                 ];
 
-                // generation d'un cookie de sécurité
-                Securite::genererCookieConnexion();
 
                 header("Location:" . URL . "compte/profil");
             } else {
@@ -49,7 +47,6 @@ class UtilisateurController extends MainController
     {
         Toolbox::ajouterMessageAlerte("Déconnexion effectuée.", Toolbox::COULEUR_VERTE);
         unset($_SESSION['profil']);
-        setcookie(Securite::COOKIE_NAME, "", time() - 3600); //expiration forcée du cookie
         header("Location:" . URL . "accueil");
     }
     public function profil()
@@ -239,8 +236,8 @@ class UtilisateurController extends MainController
         $this->genererPage($data_page);
     }
 
-    public function validationCharte(){
-        $this->utilisateurManager->validationCharteBdd($_SESSION['profil']['login'], 1);
+    public function validationCharte($login, $validationCharte){
+        $this->utilisateurManager->validationCharteBdd($login, $validationCharte);
     
     
         header('Location:' . URL . 'compte/profil');

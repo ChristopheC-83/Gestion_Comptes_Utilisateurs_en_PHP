@@ -51,7 +51,7 @@
         <a href="<?= URL ?>compte/charte/<?=$page + 1?>">Page suivante</a>
         
     <?php else : ?>
-        <a href="<?= URL ?>compte/profil">Je comprends et <br>
+        <a href="<?= URL ?>compte/validationCharte">Je comprends et <br>
         valide l'importance de ces points.</a>
 
     <?php endif ?>

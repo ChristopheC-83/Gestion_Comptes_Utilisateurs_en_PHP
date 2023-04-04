@@ -11,50 +11,56 @@
                 <th>Login</th>
                 <th>Validé</th>
                 <th>Rôle</th>
+                <th>Charte</th>
                 <th>Mail</th>
             </tr>
             <?php foreach ($utilisateurs as $utilisateur) : ?>
 
-            <tr>
-                <td><?= $utilisateur['login'] ?></td>
+                <tr>
+                    <td><?= $utilisateur['login'] ?></td>
 
-                <td>
+                    <td>
 
-                    <form action="<?= URL ?>administration/validation_modificationValidation" method="post"
-                        class="formulaireAdminCompte">
-                        <input type="hidden" name="login" value="<?= $utilisateur['login'] ?>" />
-                        <select name="est_valide" onchange="confirmation(this.form)">
-                            <option value=0 <?= (int)$utilisateur['est_valide'] === 0 ? "selected" : "" ?>>En attente de
-                                validation</option>
-                            <option value=1 <?= (int)$utilisateur['est_valide'] === 1 ? "selected" : "" ?>>Validé
-                            </option>
-                        </select>
-                    </form>
+                        <form action="<?= URL ?>administration/validation_modificationValidation" method="post" class="formulaireAdminCompte">
+                            <input type="hidden" name="login" value="<?= $utilisateur['login'] ?>" />
+                            <select name="est_valide" onchange="confirmation(this.form)">
+                                <option value=0 <?= (int)$utilisateur['est_valide'] === 0 ? "selected" : "" ?>>En attente de
+                                    validation</option>
+                                <option value=1 <?= (int)$utilisateur['est_valide'] === 1 ? "selected" : "" ?>>Validé
+                                </option>
+                            </select>
+                        </form>
 
-                </td>
+                    </td>
 
-                <td>
-                    <?php if ($utilisateur['role'] === "administrateur") : ?>
-                    <?= $utilisateur['role'] ?>
-                    <?php else : ?>
-                    <form action="<?= URL ?>administration/validation_modificationRole" method="post"
-                        class="formulaireAdminRole">
-                        <input type="hidden" name="login" value="<?= $utilisateur['login'] ?>" />
-                        <select name="role" onchange="confirmation(this.form)">
-                            <option value="utilisateur" <?= $utilisateur['role'] === "utilisateur" ? "selected" : "" ?>>
-                                Utilisateur</option>
-                            <option value="moderateur" <?= $utilisateur['role'] === "moderateur" ? "selected" : "" ?>>
-                                Modérateur</option>
-                            <option value="administrateur">Administrateur</option>
-                        </select>
+                    <td>
+                        <?php if ($utilisateur['role'] === "administrateur") : ?>
+                            <?= $utilisateur['role'] ?>
+                        <?php else : ?>
+                            <form action="<?= URL ?>administration/validation_modificationRole" method="post" class="formulaireAdminRole">
+                                <input type="hidden" name="login" value="<?= $utilisateur['login'] ?>" />
+                                <select name="role" onchange="confirmation(this.form)">
+                                    <option value="utilisateur" <?= $utilisateur['role'] === "utilisateur" ? "selected" : "" ?>>
+                                        Utilisateur</option>
+                                    <option value="moderateur" <?= $utilisateur['role'] === "moderateur" ? "selected" : "" ?>>
+                                        Modérateur</option>
+                                    <option value="administrateur">Administrateur</option>
+                                </select>
 
 
-                    </form>
-                    <?php endif ?>
-                </td>
+                            </form>
+                        <?php endif ?>
+                    </td>
+                    <td>
+                        <?php if ($utilisateur['charteOk'] === 0) : ?>
+                            Charte non validée
+                        <?php elseif ($utilisateur['charteOk'] === 1) : ?>
+                            Charte validée
+                        <?php endif ?>
+                    </td>
 
-                <td><?= $utilisateur['mail'] ?></td>
-            </tr>
+                    <td><?= $utilisateur['mail'] ?></td>
+                </tr>
 
             <?php endforeach ?>
         </thead>
