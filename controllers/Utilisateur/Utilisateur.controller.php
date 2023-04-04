@@ -173,9 +173,6 @@ class UtilisateurController extends MainController
 
     public function validation_suppressionCompte()
     {
-        $this->dossierSuppressionImageUtilisateur($_SESSION['profil']['login']);
-        rmdir("public/assets/images/profils/" . $_SESSION['profil']['login']);
-
         if ($this->utilisateurManager->dbSupressionCompte($_SESSION['profil']['login'])) {
             // self::deconnexion();
             Toolbox::ajouterMessageAlerte("La suppression du compte est effectuée.", Toolbox::COULEUR_VERTE);
@@ -185,36 +182,8 @@ class UtilisateurController extends MainController
             header('Location:' . URL . 'compte/profil');
         }
     }
-    public function validation_modificationImage($file)
-    // on ne reçoit pas une image mais un tableau d'informations, donc file et pas image pour le nom du paramètre
-    {
-        try {
-
-            // chaque user aura son répertoire, on y ajoute l'image
-            $repertoire = "public/assets/images/profils/" . $_SESSION['profil']['login'] . "/";
-            $nomImage = Toolbox::ajoutImage($file, $repertoire);
-            // suppression ancienne image
-            $this->dossierSuppressionImageUtilisateur($_SESSION['profil']['login']);
-            // ajout nouvelle image en bd
-            $nomImageBD = "profils/" . $_SESSION['profil']['login'] . "/" . $nomImage;
-            if ($this->utilisateurManager->bdAjoutImage(($_SESSION)['profil']['login'], $nomImageBD)) {
-                Toolbox::ajouterMessageAlerte("La modification de l'image est effectuée ! 😍", Toolbox::COULEUR_VERTE);
-            } else {
-                Toolbox::ajouterMessageAlerte("La modification de l'image n'a pas été effectuée 💀", Toolbox::COULEUR_ROUGE);
-            }
-        } catch (Exception $e) {
-            Toolbox::ajouterMessageAlerte($e->getMessage(), Toolbox::COULEUR_ROUGE);
-        }
-        header('Location:' . URL . 'compte/profil');
-    }
-    private function  dossierSuppressionImageUtilisateur($login)
-    {
-
-        $ancienneImage = $this->utilisateurManager->getImageUtilisateur($_SESSION['profil']['login']);
-        if ($ancienneImage !== "profils/profil.png") {
-            unlink("public/assets/images/" . $ancienneImage);
-        }
-    }
+    
+    
     public function charte($numPage)
 
     {

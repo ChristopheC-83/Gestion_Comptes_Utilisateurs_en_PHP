@@ -129,29 +129,7 @@ class UtilisateurManager extends MainManager
         $stmt->closeCursor();
         return $estModifie;
     }
-    public function bdAjoutImage($login, $image)
-    {
-        $req = "UPDATE utilisateur set image = :image WHERE login = :login";
-        $stmt = $this->getBDD()->prepare($req);
-        $stmt->bindValue(":login", $login, PDO::PARAM_STR);
-        $stmt->bindValue(":image", $image, PDO::PARAM_STR);
-        $stmt->execute();
-        $estModifie = ($stmt->rowCount() > 0);
-        $stmt->closeCursor();
-        return $estModifie;
-    }
 
-    public function getImageUtilisateur($login)
-    {
-
-        $req = "SELECT image FROM utilisateur WHERE login = :login";
-        $stmt = $this->getBDD()->prepare($req);
-        $stmt->bindValue(":login", $login, PDO::PARAM_STR);
-        $stmt->execute();
-        $resultat = $stmt->fetch(PDO::FETCH_ASSOC);
-        $stmt->closeCursor();
-        return $resultat['image'];
-    }
 
     public function charteBdd()
     {
