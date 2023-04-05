@@ -42,7 +42,7 @@
     <!-- pour choisir les fichiers js actifs par page qui seront dans un tableau dans les controllers-->
     <?php if(!empty($js)) : ?>
         <?php foreach($js as $fichier_javascript) : ?>
-            <script src="<?= URL?>public/javaScript/<?= $fichier_javascript ?>"></script>
+            <script src="<?= URL?>public/javascript/<?= $fichier_javascript ?>"></script>
         <?php endforeach; ?>
     <?php endif; ?> 
 

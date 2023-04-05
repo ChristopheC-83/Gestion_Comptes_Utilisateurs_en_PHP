@@ -1,5 +1,6 @@
 <div class="entetePage <?= $css  ?>">
 
+<div class="overlay dnone"></div>
 
     <h1>Charte du poseur</h1>
 
@@ -8,10 +9,10 @@
 
 
     <div class="charteContent">
-        <?=$nbPages?>
         <!-- <pre>
-        <?php echo ("test numpage => ".$numPage) ?>
-        <?php $page=(int)$numPage ?>
+        <?= $nbPages ?>
+        <?php echo ("test numpage => " . $numPage) ?>
+        <?php $page = (int)$numPage ?>
         
         <?php print_r($charteContent[$page]) ?>
         </pre> -->
@@ -19,8 +20,8 @@
 
         <h3><?= $charteContent[$page]['titre_chapitre1'] ?></h3>
         <div class="content content1">
-            <?php if( $charteContent[$page]['img1']) :?>
-            <img src="<?= URL ?>/public/assets/images/<?= $charteContent[$page]['img1'] ?>">
+            <?php if ($charteContent[$page]['img1']) : ?>
+                <img src="<?= URL ?>/public/assets/images/<?= $charteContent[$page]['img1'] ?> " class="img imgCharte">
             <?php endif ?>
             <p><?= $charteContent[$page]['contenu1'] ?></p>
         </div>
@@ -28,14 +29,14 @@
 
 
         <?php if ($charteContent[$page]['titre_chapitre2']) : ?>
-        <div class="separateur"></div>
-        <h3><?= $charteContent[$page]['titre_chapitre2'] ?></h3>
-        <div class="content content2">
-            <p><?= $charteContent[$page]['contenu2'] ?></p>
-            <?php if( $charteContent[$page]['img2']) :?>
-            <img src="<?= URL ?>/public/assets/images/<?= $charteContent[$page]['img2'] ?>">
-            <?php endif ?>
-        </div>
+            <div class="separateur"></div>
+            <h3><?= $charteContent[$page]['titre_chapitre2'] ?></h3>
+            <div class="content content2">
+                <p><?= $charteContent[$page]['contenu2'] ?></p>
+                <?php if ($charteContent[$page]['img2']) : ?>
+                    <img src="<?= URL ?>/public/assets/images/<?= $charteContent[$page]['img2'] ?>" class="img imgCharte">
+                <?php endif ?>
+            </div>
         <?php endif ?>
         <br>
 
@@ -47,14 +48,14 @@
 
     <div class="nextPage disable" id="nextPage">
 
-    <?php  if (($page + 1) < $nbPages) : ?>
-        <a href="<?= URL ?>compte/charte/<?=$page + 1?>">Page suivante</a>
-        
-    <?php else : ?>
-        <a href="<?= URL ?>compte/validationCharte">Je comprends et <br>
-        valide l'importance de ces points.</a>
+        <?php if (($page + 1) < $nbPages) : ?>
+            <a href="<?= URL ?>compte/charte/<?= $page + 1 ?>">Page suivante</a>
 
-    <?php endif ?>
-    
+        <?php else : ?>
+            <a href="<?= URL ?>compte/validationCharte">Je comprends et <br>
+                valide l'importance de ces points.</a>
+
+        <?php endif ?>
+
     </div>
 </div>
