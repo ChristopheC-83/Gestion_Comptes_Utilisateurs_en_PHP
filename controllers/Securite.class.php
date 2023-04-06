@@ -3,6 +3,7 @@
 
 class Securite
 {
+
     public static function secureHTML($chaine)
     {
         return htmlentities($chaine);
@@ -19,7 +20,8 @@ class Securite
     {
         return (!empty($_SESSION['profil']['role'] === "administrateur"));
     }
-    
 
-    
+
+    // on génère à la connexion, 
+    // il aura une durée de vie de 60*30 = 30 minutes
 }

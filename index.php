@@ -82,8 +82,8 @@ try {
             if (!Securite::estConnecte()) {
                 Toolbox::ajouterMessageAlerte("Veuillez vous connecter.", Toolbox::COULEUR_ROUGE);
                 header('Location:' . URL . 'login');
-           
-            } else {
+            }
+             else {
                 switch ($url[1]) {
                     case "profil":
                         $utilisateurController->profil();

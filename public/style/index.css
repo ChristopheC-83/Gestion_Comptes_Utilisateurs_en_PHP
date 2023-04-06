@@ -249,7 +249,6 @@ a {
   margin: 40px auto;
   box-shadow: 2px 2px 4px #333;
   border-radius: 10px;
-  transition: all 0.25s;
 }
 .charteContainer .charteContent .separateur {
   height: 5px;
@@ -296,12 +295,11 @@ a {
 }
 .charteContainer .imgFull {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
+  top: 10%;
+  left: 5%;
+  width: 90%;
   height: auto;
   z-index: 15;
-  transition: all 0.25s;
 }
 .charteContainer .overlay {
   position: absolute;

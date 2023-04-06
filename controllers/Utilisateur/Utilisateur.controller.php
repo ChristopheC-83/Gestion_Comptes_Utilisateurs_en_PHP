@@ -220,6 +220,10 @@ class UtilisateurController extends MainController
             $sujet = "Validation Charte Pose de ".$utilisateur['login'];
             $message = $utilisateur['login']." de ".$utilisateur['mail']." vient de valider la charte de nos poseurs partenaires. Merci à lui. ";
             Toolbox::sendMail("christophe.chiappetta@gmail.com", $sujet, $message);
+            $sujet = "Validation Charte Pose de ".$utilisateur['login'];
+
+            $message = $utilisateur['login']." de ".$utilisateur['mail']." vient de valider la charte de nos poseurs partenaires. Merci à lui. ";
+            Toolbox::sendMail("arles@ixina.com", $sujet, $message);
         }
 
         header('Location:' . URL . 'compte/profil');

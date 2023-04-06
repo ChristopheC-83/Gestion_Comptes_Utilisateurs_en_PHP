@@ -17,7 +17,7 @@
     </p>
     <br>
     <p>
-        Donc MERCI de suivre ces méthodes / consignes pas à pas. Elles peuvent être une source d'échanges entre nous.<br><br> Nous ne prétendons pas avoir la vérité absolue sur le métier de la pose, mais nous avons à coeur de satisfaire nos clients. Aussi, si vous avez au moins mieux mais plus rapide, plus facile à faire, n'hésitez pas partager pour alimenter vos collègues !
+        Donc MERCI de suivre ces méthodes / consignes pas à pas. Elles peuvent être une source d'échanges entre nous.<br><br> Nous ne prétendons pas avoir la vérité absolue sur le métier de la pose, mais nous avons à coeur de satisfaire nos clients. <br>Aussi, si vous avez au moins mieux mais plus rapide, plus facile à faire, n'hésitez pas partager pour alimenter vos collègues !
     </p>
     <h3>Mais maintenant, c'est à vous de jouer !</h3>
     <p>Oui, ces indications ne sont que des rappels mais permettent de cadrer nos attentes quant à la prestation
