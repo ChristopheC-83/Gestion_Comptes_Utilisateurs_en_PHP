@@ -154,7 +154,7 @@ class UtilisateurManager extends MainManager
         $req = "UPDATE utilisateur set charteOk= :charteOk WHERE login = :login";
         $stmt = $this->getBDD()->prepare($req);
         $stmt->bindValue(":login", $login, PDO::PARAM_STR);
-        $stmt->bindValue(":charteOk", $charteOk, PDO::PARAM_STR);
+        $stmt->bindValue(":charteOk", $charteOk, PDO::PARAM_INT);
         $stmt->execute();
         $estModifie = ($stmt->rowCount() > 0);
         $stmt->closeCursor();

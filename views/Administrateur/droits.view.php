@@ -52,9 +52,9 @@
                         <?php endif ?>
                     </td>
                     <td>
-                        <?php if ($utilisateur['charteOk'] === 0) : ?>
+                        <?php if ((int)$utilisateur['charteOk'] === 0) : ?>
                             Charte non validée
-                        <?php elseif ($utilisateur['charteOk'] === 1) : ?>
+                        <?php elseif ((int)$utilisateur['charteOk'] === 1) : ?>
                             Charte validée
                         <?php endif ?>
                     </td>

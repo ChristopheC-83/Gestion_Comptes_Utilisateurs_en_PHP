@@ -208,7 +208,7 @@ class UtilisateurController extends MainController
     public function validationCharte($login, $validationCharte)
     {
         $utilisateur = $this->utilisateurManager->getUserInformation($login);
-        if ($utilisateur['charteOk'] === 0) {
+        if ((int)$utilisateur['charteOk'] === 0) {
 
             $this->utilisateurManager->validationCharteBdd($login, $validationCharte);
 

@@ -15,7 +15,7 @@ class Toolbox
 
     public static function sendMail($destinataire, $sujet, $message)
     {
-        $headers = "From : Ixina Arles";
+        $headers = "From : arles@ixina.com";
         if (mail($destinataire, $sujet, $message, $headers)) {
             self::ajouterMessageAlerte("Mail envoyé !", self::COULEUR_VERTE);
         } else {

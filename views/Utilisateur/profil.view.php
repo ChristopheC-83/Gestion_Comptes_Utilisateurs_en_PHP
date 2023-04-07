@@ -9,9 +9,9 @@
     </div>
     <br>
     <div id="charteOk">
-        <p><b>charteOk :</b> <?php if ($utilisateur['charteOk'] === 0) : ?>
+        <p><b>charteOk :</b> <?php if ((int)$utilisateur['charteOk'] === 0) : ?>
             Charte non validée
-            <?php elseif ($utilisateur['charteOk'] === 1) : ?>
+            <?php elseif ((int)$utilisateur['charteOk'] === 1) : ?>
             Charte validée
             <?php endif ?></p>
     </div>
