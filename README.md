@@ -1,18 +1,7 @@
-Ce dossier est une base pour créer un site qui devra gérer :
+Site conçu pour que des poseurs partenaires d'une enseigne de cuisines : 
 
-- des visiteurs.
-- des utilisateurs inscrits et connectés avec des accés et droits supplémentaites.
-- des aadministrateurs avec des accés et droits supplémentaites.
+1) s'inscrivent et valident leur mail par un lien de validation.
+2) prennent connaissance et valident point par point les détails de leurs missions.
+3) un mail de confirmationd e leur validation leur est envoyé + administrateur.
 
-L'architecture est sur une base MVC.
-
-Le style s'appuie sur le preprocesseur SASS.
-
-Une petite animation GSAP traine, pour le fun ;-)
-C'est discret !
-
-ATTENTION, en aucun cas l'esthétique du site a été pris en compte.... on part ici d'un site nom stylé !
-
-Un exemple basique de base SQL est fourni.
-
-
+L'administrateur peut visiualiser les inscrit et leur statut de validation mail et charte.
