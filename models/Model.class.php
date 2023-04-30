@@ -3,10 +3,10 @@
 abstract class Model
 {
     
-    private static $dbhost = "89.116.147.103";
-    private static $dbname = "u256533777_charte_poseurs";
-    private static $dbUser = "u256533777_ixina_arles";
-    private static $dbUserPassword = "Bulgarie359";
+    private static $dbhost = "=?????;";
+    private static $dbname = "=?????;";
+    private static $dbUser = "=?????;";
+    private static $dbUserPassword = "=?????;";
     private static $pdo;
     
 
